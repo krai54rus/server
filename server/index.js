@@ -12,7 +12,7 @@ const corsOption = {
   "optionsSuccessStatus": 204
 };
 app.use(cors(corsOption))
-app.use(express.static(path.join(__dirname,"../build")));
+// app.use(express.static(path.join(__dirname,"../build")));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Router imports
