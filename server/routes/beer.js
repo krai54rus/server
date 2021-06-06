@@ -17,6 +17,7 @@ module.exports = function(app,db) {
     const collection = db.db("portal").collection("beer");
     collection.find({}).toArray(function(err, beers){
         if(err) return console.log(err);
+        console.log(beers);
         res.send(beers);
     });
   });

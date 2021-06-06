@@ -46,7 +46,7 @@ mongoClient.connect((err, client) => {
   // app.use('/amazon', amazonRouter);
   // app.use('/catalog', catalogRouter);
 
-  app.listen(1234, () => {
+  app.listen(5000, () => {
     console.log('сервер поехал');
   })
   // const collection = client.db("portal").collection("beer");
