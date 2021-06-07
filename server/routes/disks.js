@@ -16,7 +16,7 @@ module.exports = function(app,db) {
     });
     app.get('/personal/disks', function(req,res){
       const collection = db.db("diplom").collection("disks");
-      collection.find({}).limit( 5 ).toArray(function(err, disks){
+      collection.find({}).limit( 10 ).toArray(function(err, disks){
           if(err) return console.log(err);
           console.log('/personal/disks');
           res.send(disks);
@@ -32,4 +32,3 @@ module.exports = function(app,db) {
       });
     });
   };
-  
