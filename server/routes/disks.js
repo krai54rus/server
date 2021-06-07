@@ -6,6 +6,15 @@ module.exports = function(app,db) {
           res.send(disks);
       });
     });
+    app.get('/main/disks', function(req,res){
+      const collection = db.db("diplom").collection("disks");
+      collection.find({main:true}).toArray(function(err, disks){
+          if(err) return console.log(err);
+          // console.log('/main/disks');
+          console.log(disks);
+          res.send(disks);
+      });
+    });
     app.get('/disks/all', function(req,res){
       const collection = db.db("diplom").collection("disks");
       collection.find({}).toArray(function(err, disks){
