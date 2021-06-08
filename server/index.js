@@ -15,22 +15,12 @@ app.use(cors(corsOption))
 // app.use(express.static(path.join(__dirname,"../build")));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Router imports
-// import indexRouter from './routes/index';
-// import amazonRouter from './routes/amazon';
-// import securityRouter from './routes/security';
-// import catalogRouter from './routes/catalog';
-// import shoppingRouter from './routes/shopping';
-// import userRouter from './routes/user';
-// import orderRouter from './routes/orders';
-// import uiRouter from './routes/ui';
 const uri = config.url;
 const mongoClient = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoClient.connect((err, client) => {
   if (err) return console.log(err);
 
   // Подрубаем роуты, пихаем туда экспресс объект для создания роутов и  монго объект для работы с бд
-  // require('./routes')(app, client);
   require('./routes')(app,client);
   // Test роутер для фронта - удалить
   // app.get('/beer',(req,res)=>{
