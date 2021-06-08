@@ -1,6 +1,7 @@
 module.exports = function(app,db) {
   require('./beer')(app,db);
   require('./disks')(app,db);
+  require('./constructor')(app,db);
   //const beerRouter = app.Router;
   // app.get('/beer', function(req,res){
   //   const collection = db.db("portal").collection("beer");

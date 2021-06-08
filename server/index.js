@@ -49,6 +49,4 @@ mongoClient.connect((err, client) => {
   app.listen(5000, () => {
     console.log('сервер поехал');
   })
-  // const collection = client.db("portal").collection("beer");
-  // mongoClient.close();
 });
