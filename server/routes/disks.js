@@ -10,8 +10,6 @@ module.exports = function(app,db) {
       const collection = db.db("diplom").collection("disks");
       collection.find({main:true}).toArray(function(err, disks){
           if(err) return console.log(err);
-          // console.log('/main/disks');
-          console.log(disks);
           res.send(disks);
       });
     });
