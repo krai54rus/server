@@ -26,6 +26,19 @@ module.exports = function(app,db) {
             }
         });
     });
+
+    // Просто взял инфу пользователя
+    app.get('/personal/info', function(req,res){
+        const collection = db.db("diplom").collection("personal");
+        collection.findOne({login:req.query.login},function(err, user){
+            if(err) return console.log(err);
+              if (user) {
+                res.send({status:'OK',result:user});
+              }else{
+                  res.send({status:'ERROR',result:'Пользователь не найден'});
+              }
+        });
+      });
      // Обновление полей
     app.post('/personal/update', function(req,res){
         const collection = db.db("diplom").collection("personal");
