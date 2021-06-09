@@ -38,14 +38,6 @@ module.exports = function(app,db) {
       arrSize = Array.from(new Set(arrSize));
       console.log(arrET);
     });
-    app.get('/personal/disks', function(req,res){
-      const collection = db.db("diplom").collection("disks");
-      collection.find({}).limit( 10 ).toArray(function(err, disks){
-          if(err) return console.log(err);
-          console.log('/personal/disks');
-          res.send(disks);
-      });
-    });
     app.get('/beer/style', function(req,res){
       let styleFind = req.query.style;
       console.log(req.query.style);
